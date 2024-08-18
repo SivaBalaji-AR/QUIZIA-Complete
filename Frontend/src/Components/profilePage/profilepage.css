@@ -1,3 +1,7 @@
+.total-profile{
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+}
 .profile-page-container {
     width: 80%;
     margin: 0 auto;

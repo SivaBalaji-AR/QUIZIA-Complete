@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { QuizContext } from '../context/Quizcontext';
+import { QuizContext } from '../context/QuizContext';
 import './LoginComponent.css';
 import QICON from '../../Files/QICON.jpg';
 
@@ -14,20 +14,20 @@ const LoginComponent = ({ onClose }) =>
 
   useEffect(() => 
   {
-    axios.get('http://localhost:8080/user/getUser')  //handle http request
+    axios.get('http://localhost:8080/user/getUser') 
       .then(response => setUsers(response.data))
       .catch(error => console.error('Error:', error));
   }, []);
 
   const handleLogin = (e) => 
   {
-    e.preventDefault();  //not to delete data
+    e.preventDefault();  //not to delete data on the form
     const foundUsers = users.filter(user => user.username === loginDetails.username);
     //console.log(foundUsers);
     if (foundUsers.length > 0 && foundUsers[0].password === loginDetails.password) 
     {
       setUsername(foundUsers[0].username);
-      //alert('Login Successful');
+      alert('Login Successful');
       onClose();
       navigate('/');
     } 

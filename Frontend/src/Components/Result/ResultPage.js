@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { QuizContext } from '../context/Quizcontext';
+import { QuizContext } from '../context/QuizContext';
 import { Link, useLocation } from 'react-router-dom';
 import './ResultPage.css';
+import Navbar from '../smallcomponents/Navbar';
 
 function ResultPage() {
   const { mark, quizTopic, quizName, username } = useContext(QuizContext);
@@ -19,10 +20,9 @@ function ResultPage() {
       quizId: quizId
     };
 
-    // Post the result details
     axios.post('http://localhost:8080/result/insertResult', resDet)
       .then(response => {
-        // Handle response if needed
+        console.log("result uploaded");
       })
       .catch(error => {
         alert('Result error:', error);
@@ -55,7 +55,9 @@ function ResultPage() {
   }, [username, mark, quizName, quizTopic, quizId, correctFocusTopic]);
 
   return (
+    <div style={{ background: 'linear-gradient(to right, #a1c4fd, #c2e9fb)', height: '100vh' }}>
     <div className="result-container">
+      <div style={{marginLeft:"39%"}}><Navbar/></div>
       <h2 className="result-header">Result Page</h2>
       <div className="result-info">
         <ul>
@@ -67,7 +69,7 @@ function ResultPage() {
       <table className="result-table">
         <thead>
           <tr>
-            <th>Quiz Topic</th>
+            <th>Focus Topic</th>
             <th>Total Questions</th>
             <th>No of Correct</th>
             <th>No of Wrong</th>
@@ -84,10 +86,7 @@ function ResultPage() {
           ))}
         </tbody>
       </table>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/leaderboard">Leaderboard</Link>
-      </div>
+    </div>
     </div>
   );
 }

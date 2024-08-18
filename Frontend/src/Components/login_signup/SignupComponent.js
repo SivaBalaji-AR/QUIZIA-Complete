@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { QuizContext } from '../context/Quizcontext';
+import { QuizContext } from '../context/QuizContext';
 import './SignupComponent.css';
 import QICON from '../../Files/QICON.jpg';
 
 export default function SignupComponent() {
   const [signupDetails, setSignupDetails] = useState({});
   const navigate = useNavigate();
-  const { setUsername } = useContext(QuizContext); // Use the context
+  const { setUsername } = useContext(QuizContext); 
 
   const checkUserExists = async (username) => {
     try {

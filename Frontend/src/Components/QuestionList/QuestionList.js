@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import CreateQuiz from '../Create/CreateQuiz';
-import { QuizContext } from '../context/Quizcontext';
+import { QuizContext } from '../context/QuizContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -100,11 +100,11 @@ const QuestionList = () => {
           }, {});
 
           setContextMark(mark);
-          setWrongTopic(Object.keys(aggregatedIncorrectFocusTopic).map(topic => ({
-            topic,
-            totalQuestions: topicCounts.totalQuestions[topic],
-            totalWrong: aggregatedIncorrectFocusTopic[topic]
-          })));
+          // setWrongTopic(Object.keys(aggregatedIncorrectFocusTopic).map(topic => ({
+          //   topic,
+          //   totalQuestions: topicCounts.totalQuestions[topic],
+          //   totalWrong: aggregatedIncorrectFocusTopic[topic]
+          // })));
 
           navigate('/result', {
             state: {
@@ -127,7 +127,7 @@ const QuestionList = () => {
         quiz_id={quizId}
         quizName={quizName}
         quizTopic={quizTopic}
-        sentence1={index + 1 + "." + questionList[index]?.question}
+        sentence1={index + 1 + ". " + questionList[index]?.question}
         option1={questionList[index]?.option1}
         option2={questionList[index]?.option2}
         option3={questionList[index]?.option3}

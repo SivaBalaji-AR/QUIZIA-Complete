@@ -8,10 +8,11 @@ export const QuizProvider = ({ children }) => {
   const [quizName, setQuizName] = useState('');
   const [quizId, setQuizId] = useState(null);
   const [mark, setMark] = useState(0);
-  const [wrongtopic, setWrongTopic] = useState([]); // Initialize as an array
-
+  const [aifoctopic, setAifocTopic] = useState({}); 
+  const [wrongTopics, setWrongTopic] = useState({}); 
+  const [aimark, setAimark] = useState(0); 
   return (
-    <QuizContext.Provider value={{ username, setUsername, quizTopic, setQuizTopic, quizName, setQuizName, mark, setMark, wrongtopic, setWrongTopic, quizId, setQuizId }}>
+    <QuizContext.Provider value={{ username, setUsername, quizTopic, setQuizTopic, quizName, setQuizName, mark, setMark, quizId, setQuizId ,aifoctopic,setAifocTopic,aimark,setAimark}}>
       {children}
     </QuizContext.Provider>
   );

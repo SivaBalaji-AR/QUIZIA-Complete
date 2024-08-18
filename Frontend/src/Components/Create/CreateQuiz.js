@@ -3,7 +3,6 @@ import './CreateQuiz.css';
 
 const CreateQuiz = ({ sentence1, option1, option2, option3, option4, onCheckboxChange, resetCheckbox, quizTopic, quizName, onNextClick, buttonName, correctOption, isSubmitMode }) => {
   const [selectedCheckbox, setSelectedCheckbox] = useState(null);
-
   const handleCheckboxChange = (id) => {
     const newSelection = selectedCheckbox === id ? null : id;
     setSelectedCheckbox(newSelection);
