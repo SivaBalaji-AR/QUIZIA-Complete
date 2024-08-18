@@ -1,0 +1,92 @@
+.leaderboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.leaderboard-header {
+  font-family: 'Arial Rounded MT', Arial, sans-serif;
+  font-size: 2rem; /* Larger header font size */
+  font-weight: bold;
+  color: #333; /* Darker text color for better readability */
+  margin-bottom: 20px;
+  text-align: center; /* Center-align the header */
+}
+
+.top-image {
+  height: 70px;
+  border-radius: 10px;
+  transition: transform 0.6s ease, box-shadow 0.7s ease;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox for side-by-side layout */
+  justify-content: center; /* Center the filters */
+  gap: 20px; /* Add space between filters */
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Rounded corners for dropdowns */
+  background-color: #fff; /* White background for dropdowns */
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table thead th {
+  border-bottom: 2px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  background-color: #f8f8f8; /* Light background for header */
+}
+
+.table tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  background-color: #fff; /* White background for rows */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.table tbody tr:hover {
+  background-color: #e0e0e0; /* Hover effect for rows */
+}
+
+.table th, .table td {
+  text-align: center; /* Center-align text in table cells */
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column; /* Stack filters on smaller screens */
+  }
+
+  .filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filter select {
+    width: 100%;
+  }
+}

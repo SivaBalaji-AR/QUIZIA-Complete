@@ -1,0 +1,97 @@
+/* ResultPage.css */
+
+.result-container {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  .result-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #444;
+  }
+  
+  .result-info {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .result-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .result-info li {
+    margin: 10px 0;
+  }
+  
+  .result-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+  }
+  
+  .result-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .result-table th, .result-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .result-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .result-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .result-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .result-table tbody td {
+    font-size: 0.9rem;
+  }
+  
+  .links {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1rem;
+    margin: 0 15px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .result-table {
+      width: 100%;
+    }
+  
+    .result-info ul {
+      font-size: 1rem;
+    }
+  
+    .links a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  
